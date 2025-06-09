@@ -1,9 +1,14 @@
 import { Route, Routes } from "react-router";
 import styled from "styled-components";
+import { Header } from "./components";
 
 const App = styled.div`
 	display: flex;
-
+	min-height: 100%;
+	background-color: white;
+`
+const Page = styled.div`
+	padding: 120px 0 20px;
 `
 
 export const Todo = () => {
@@ -22,7 +27,7 @@ export const Todo = () => {
 					<Route path='*' element={<div>Страница ошибки</div>} />
 				</Routes>
 			</Page>
-			<Footer />
+			{/* <Footer /> */}
 		</App>
 	);
 };
