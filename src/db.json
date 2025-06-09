@@ -1,0 +1,72 @@
+{
+	"users": [
+		{
+			"login": "admin",
+			"password": "qwerty123",
+			"registed_at": "2025-06-05 09:00",
+			"role_id": 0,
+			"id": "67ff"
+		},
+		{
+			"login": "ivan",
+			"password": "qwerty123",
+			"registed_at": "2025-06-10 11:00",
+			"role_id": 1,
+			"id": "dsaf"
+		},
+		{
+			"login": "niko",
+			"password": "qwerty123",
+			"registed_at": "2025-06-12 11:00",
+			"role_id": 2,
+			"id": "dssf"
+		}
+	],
+	"roles": [
+		{
+			"id": 0,
+			"name": "Руководитель"
+		},
+		{
+			"id": 1,
+			"name": "Заместитель"
+		},
+		{
+			"id": 2,
+			"name": "Испольнитель"
+		}
+	],
+	"todos": [
+		{
+		"id": "001",
+		"title": "Обновить данные",
+		"content": "Обновить данные по товару в картачках клиента",
+		"published_at": "2025-06-05",
+		"deadline": "2025-07-01",
+		"user": "niko"
+	},
+	{
+		"id": "002",
+		"title": "Исправить проблему",
+		"content": "Исправить проблему с отключение пропусков",
+		"published_at": "2025-06-06 10:00",
+		"deadline": "2025-06-07 09:00",
+		"user": "niko"
+	}
+],
+"session" : [
+	{
+
+	}
+],
+"comments" : [
+	{
+		"id": "324s",
+		"author_id": "ivan",
+		"post_id": "002",
+		"content": "Исправленно",
+		"img_url": "https://s00.yaplakal.com/pics/pics_original/4/9/0/19660094.jpg",
+		"publishedAt": "2025-06-07 08:00"
+	}
+]
+}
