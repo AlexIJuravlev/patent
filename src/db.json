@@ -1,72 +1,139 @@
 {
-	"users": [
-		{
-			"login": "admin",
-			"password": "qwerty123",
-			"registed_at": "2025-06-05 09:00",
-			"role_id": 0,
-			"id": "67ff"
-		},
-		{
-			"login": "ivan",
-			"password": "qwerty123",
-			"registed_at": "2025-06-10 11:00",
-			"role_id": 1,
-			"id": "dsaf"
-		},
-		{
-			"login": "niko",
-			"password": "qwerty123",
-			"registed_at": "2025-06-12 11:00",
-			"role_id": 2,
-			"id": "dssf"
-		}
-	],
-	"roles": [
-		{
-			"id": 0,
-			"name": "Руководитель"
-		},
-		{
-			"id": 1,
-			"name": "Заместитель"
-		},
-		{
-			"id": 2,
-			"name": "Испольнитель"
-		}
-	],
-	"todos": [
-		{
-		"id": "001",
-		"title": "Обновить данные",
-		"content": "Обновить данные по товару в картачках клиента",
-		"published_at": "2025-06-05",
-		"deadline": "2025-07-01",
-		"user": "niko"
-	},
-	{
-		"id": "002",
-		"title": "Исправить проблему",
-		"content": "Исправить проблему с отключение пропусков",
-		"published_at": "2025-06-06 10:00",
-		"deadline": "2025-06-07 09:00",
-		"user": "niko"
-	}
-],
-"session" : [
-	{
-
-	}
-],
-"comments" : [
-	{
-		"id": "324s",
-		"author_id": "ivan",
-		"post_id": "002",
-		"content": "Исправленно",
-		"img_url": "https://s00.yaplakal.com/pics/pics_original/4/9/0/19660094.jpg",
-		"publishedAt": "2025-06-07 08:00"
-	}
-]
+  "users": [
+    {
+      "login": "admin",
+      "password": "qwerty123",
+      "registed_at": "2025-06-05 09:00",
+      "role_id": 0,
+      "id": "67ff"
+    },
+    {
+      "login": "ivan",
+      "password": "qwerty123",
+      "registed_at": "2025-06-10 11:00",
+      "role_id": 1,
+      "id": "dsaf"
+    },
+    {
+      "login": "niko",
+      "password": "qwerty123",
+      "registed_at": "2025-06-12 11:00",
+      "role_id": 2,
+      "id": "dssf"
+    }
+  ],
+  "roles": [
+    {
+      "id": 0,
+      "name": "Руководитель"
+    },
+    {
+      "id": 1,
+      "name": "Заместитель"
+    },
+    {
+      "id": 2,
+      "name": "Испольнитель"
+    },
+    {
+      "id": 3,
+      "name": "Гость"
+    }
+  ],
+  "todos": [
+    {
+      "id": "001",
+      "title": "Обновить данные",
+      "content": "Обновить данные по товару в картачках клиента",
+      "published_at": "2025-06-05",
+      "deadline": "2025-07-01",
+      "user": "niko"
+    },
+    {
+      "id": "002",
+      "title": "Исправить проблему",
+      "content": "Исправить проблему с отключение пропусков",
+      "published_at": "2025-06-06 10:00",
+      "deadline": "2025-06-07 09:00",
+      "user": "niko"
+    }
+  ],
+  "session": [
+    {
+      "id": "7751",
+      "hash": "0.09864231331355366449997745803557336330413818359375",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    },
+    {
+      "id": "6463",
+      "hash": "0.91539215703075127450460968248080462217330932617188",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    },
+    {
+      "id": "2955",
+      "hash": "0.62524329659052768626281704200664535164833068847656",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    },
+    {
+      "id": "f5a4",
+      "hash": "0.99487058943952910716745918762171640992164611816406",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    },
+    {
+      "id": "a060",
+      "hash": "0.72794303633669321662580387055641040205955505371094",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    },
+    {
+      "id": "62d3",
+      "hash": "0.46066365035241219061390438582748174667358398437500",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "id": "324s",
+      "author_id": "ivan",
+      "post_id": "002",
+      "content": "Исправленно",
+      "img_url": "https://s00.yaplakal.com/pics/pics_original/4/9/0/19660094.jpg",
+      "publishedAt": "2025-06-07 08:00"
+    }
+  ]
 }

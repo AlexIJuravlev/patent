@@ -1,6 +1,6 @@
-const initialAppState = {};
+const initialTodoState = {};
 
-export const todoReducer = (state = initialAppState, action) => {
+export const todoReducer = (state = initialTodoState, action) => {
 	switch (action.type) {
 		default:
 			return state;

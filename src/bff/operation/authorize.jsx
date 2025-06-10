@@ -1,13 +1,15 @@
-import { getUser } from "../api/get-user"
+import { getUser } from "../api"
 import { sessions } from "../session"
 
 export const authorize = async (loginUser, passwordUser) => {
 	const user = await getUser(loginUser)
+	console.log('user',user);
+
 
 	if(!user){
 		return {
 			error: 'Такой пользователь не найден',
-			res: null
+			res: null,
 		}
 	}
 
