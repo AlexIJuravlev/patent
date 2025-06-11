@@ -1,6 +1,6 @@
 import { nowDate } from "../utils";
 
-export const addUser = async (login, password) => {
+export const addUser = async (login, password) => 
 	fetch(`http://localhost:3005/users`, {
 		method: 'POST',
 		headers: {
@@ -14,5 +14,4 @@ export const addUser = async (login, password) => {
 		}),
 	})
 		.then((loadedUser) => loadedUser.json())
-		.then(([loadedUser]) => loadedUser);
-};
+

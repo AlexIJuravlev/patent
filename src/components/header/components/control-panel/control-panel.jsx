@@ -10,28 +10,23 @@ import { logout } from '../../../../action';
 const UserName = styled.div`
 	color: white;
 	text-transform: uppercase;
-	margin-right: 100px;
+	padding: 10px 15px 0 0 ;
 	font-size: 20px;
-`
-
-const JobTitle = styled.div`
-	color: white;
-	font-size: 16px;
-	margin: 0 15px ;
 `;
 
 const ControlPanelContainer = ({ className }) => {
-	const roleId = useSelector(selectUserRole)
-	const user = useSelector(selectUserName)
-	const dispatch = useDispatch()
-	const session = useSelector(selectUserSession)
-	const navigate = useNavigate()
+	const roleId = useSelector(selectUserRole);
+	const user = useSelector(selectUserName);
+	const dispatch = useDispatch();
+	const session = useSelector(selectUserSession);
+	const navigate = useNavigate();
+
 
 	const onLogout = () => {
-		dispatch(logout(session))
-		navigate('/')
-	}
-
+		dispatch(logout(session));
+		navigate('/');
+		sessionStorage.clear();
+	};
 
 	return (
 		<div className={className}>
@@ -41,23 +36,20 @@ const ControlPanelContainer = ({ className }) => {
 				</Button>
 			) : (
 				<>
+					<div className='data'>
+						<UserName>{user}</UserName>
+					</div>
 					<Icon
 						id='fa-sign-out'
-						margin='-2px 15px 0 0px'
+						margin='7px 85px 0 0px'
 						color='white'
 						onClick={onLogout}
 					/>
-					<div className='data'>
-						<UserName>{user}</UserName>
-						<JobTitle>dsasda</JobTitle>
-					</div>
 				</>
 			)}
 		</div>
 	);
 };
-
-
 
 export const ControlPanel = styled(ControlPanelContainer)`
 	display: flex;

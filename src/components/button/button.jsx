@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const ButtonContainer = ({ className , children, width, ...props}) => {
+const ButtonContainer = ({ className , children, width, size, ...props}) => {
 	return (
-		<button className={className} {...props} width={width}>
+		<button className={className} {...props} width={width} size={size}>
 			{children}
 		</button>
 	);
@@ -13,7 +13,7 @@ export const Button = styled(ButtonContainer)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 18px;
+	font-size: ${({ size = '18px' }) => size};
 	height: 32px;
 	background-color: #eee;
 	border: 1px solid black;

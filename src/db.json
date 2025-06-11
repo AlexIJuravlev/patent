@@ -20,6 +20,13 @@
       "registed_at": "2025-06-12 11:00",
       "role_id": 2,
       "id": "dssf"
+    },
+    {
+      "id": "e3bf",
+      "login": "alex",
+      "password": "qwerqwer",
+      "registed_at": "11.06.2025, 16:56",
+      "role_id": 2
     }
   ],
   "roles": [
@@ -58,74 +65,7 @@
       "user": "niko"
     }
   ],
-  "session": [
-    {
-      "id": "7751",
-      "hash": "0.09864231331355366449997745803557336330413818359375",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    },
-    {
-      "id": "6463",
-      "hash": "0.91539215703075127450460968248080462217330932617188",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    },
-    {
-      "id": "2955",
-      "hash": "0.62524329659052768626281704200664535164833068847656",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    },
-    {
-      "id": "f5a4",
-      "hash": "0.99487058943952910716745918762171640992164611816406",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    },
-    {
-      "id": "a060",
-      "hash": "0.72794303633669321662580387055641040205955505371094",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    },
-    {
-      "id": "62d3",
-      "hash": "0.46066365035241219061390438582748174667358398437500",
-      "user": {
-        "login": "admin",
-        "password": "qwerty123",
-        "registedAt": "2025-06-05 09:00",
-        "roleId": 0,
-        "id": "67ff"
-      }
-    }
-  ],
+  "session": [],
   "comments": [
     {
       "id": "324s",

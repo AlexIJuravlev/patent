@@ -10,12 +10,14 @@ export const sessions = {
 	},
 	async remove(hash){
 		const session = await getSession(hash)
-
+		
 		if(!session){
 			return
 		}
 
 		deleteSession(session.id)
+
+
 	},
 	async checkAccess(hash, accessRole){
 		const dbSession = await getSession(hash)

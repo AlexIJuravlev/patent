@@ -11,7 +11,7 @@ import { useResetForm } from "../../hooks";
 import { server } from "../../bff";
 import { setUser } from "../../action";
 import { ROLE } from "../../constant";
-import { MessageError } from "./components";
+import { MessageError } from "../../components";
 
 const authFormScheme = yup.object().shape({
 	login: yup
@@ -66,14 +66,12 @@ const AuthoriationContainer = ({className}) => {
 	const onSubmit = ({login, password}) => {
 		server.authorize(login, password).then(({error, res}) => {
 			if(error){
-				console.log(error);
 				setServerError(`Ошибка запроса ${error}`)
 				return
 			}
-			console.log(res);
-
 
 			dispatch(setUser(res));
+			sessionStorage.setItem('userData', JSON.stringify(res))
 		})
 	}
 
