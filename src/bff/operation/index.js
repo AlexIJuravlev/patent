@@ -1,3 +1,5 @@
 export * from './authorize'
 export * from './registed'
 export * from './logout'
+export * from './fetchTodos'
+export * from './fetchUsers'

@@ -1,13 +1,33 @@
 import styled from 'styled-components';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { Icon } from '../../../icon/icon';
+import { useSelector } from 'react-redux';
+import { selectUserRole } from '../../../../selectors';
+import { ROLE } from '../../../../constant';
 
 const BarContainer = ({ className }) => {
+	const navigate = useNavigate()
+	const role = useSelector(selectUserRole)
+
 	return (
 		<div className={className}>
-			<Link to='/'>Главная</Link>
-			<Link to='/todo/:id/edit'>Создать задачу</Link>
-			<Link>Найти задачу</Link>
-			<Link>Добавить сотрудника</Link>
+			{role === ROLE.GUEST ? (
+				<></>
+			) : (
+				<>
+					<Icon
+						id='fa-arrow-circle-left'
+						margin='0 0 0 0px'
+						color='white'
+						size='20px'
+						onClick={() => navigate(-1)}
+					/>
+					<Link to='/'>Главная</Link>
+					<Link to='/todo/:id/edit'>Создать задачу</Link>
+					<Link>Найти задачу</Link>
+					<Link>Добавить сотрудника</Link>
+				</>
+			)}
 		</div>
 	);
 };

@@ -5,6 +5,7 @@
       "password": "qwerty123",
       "registed_at": "2025-06-05 09:00",
       "role_id": 0,
+      "job": "Руководитель",
       "id": "67ff"
     },
     {
@@ -12,6 +13,7 @@
       "password": "qwerty123",
       "registed_at": "2025-06-10 11:00",
       "role_id": 1,
+      "job": "Заместитель",
       "id": "dsaf"
     },
     {
@@ -19,31 +21,41 @@
       "password": "qwerty123",
       "registed_at": "2025-06-12 11:00",
       "role_id": 2,
+      "job": "Испольнитель",
       "id": "dssf"
     },
     {
-      "id": "e3bf",
-      "login": "alex",
+      "id": "04f3",
+      "login": "reno",
       "password": "qwerqwer",
-      "registed_at": "11.06.2025, 16:56",
-      "role_id": 2
+      "registed_at": "14.06.2025, 09:16",
+      "role_id": 2,
+      "job": "Исполнитель"
+    },
+    {
+      "id": "cf29",
+      "login": "renoo",
+      "password": "qwerqwer",
+      "registed_at": "14.06.2025, 09:18",
+      "role_id": 2,
+      "job": "Исполнитель"
     }
   ],
   "roles": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Руководитель"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Заместитель"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Испольнитель"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Гость"
     }
   ],
@@ -54,7 +66,8 @@
       "content": "Обновить данные по товару в картачках клиента",
       "published_at": "2025-06-05",
       "deadline": "2025-07-01",
-      "user": "niko"
+      "user_id": "dsaf",
+      "done": false
     },
     {
       "id": "002",
@@ -62,15 +75,38 @@
       "content": "Исправить проблему с отключение пропусков",
       "published_at": "2025-06-06 10:00",
       "deadline": "2025-06-07 09:00",
-      "user": "niko"
+      "user_id": "dssf",
+      "done": true
+    },
+    {
+      "id": "003",
+      "title": "Исправить все ошибки",
+      "content": "Исправить проблему с отключение пропусков",
+      "published_at": "2025-06-06 10:00",
+      "deadline": "2025-06-07 09:00",
+      "user_id": "dssf",
+      "done": false
     }
   ],
-  "session": [],
+  "session": [
+    {
+      "id": "8d6f",
+      "hash": "0.54903441455357704370499050128273665904998779296875",
+      "user": {
+        "login": "admin",
+        "password": "qwerty123",
+        "registedAt": "2025-06-05 09:00",
+        "roleId": 0,
+        "id": "67ff",
+        "job": "Руководитель"
+      }
+    }
+  ],
   "comments": [
     {
       "id": "324s",
-      "author_id": "ivan",
-      "post_id": "002",
+      "author_id": "dssf",
+      "todos_id": "002",
       "content": "Исправленно",
       "img_url": "https://s00.yaplakal.com/pics/pics_original/4/9/0/19660094.jpg",
       "publishedAt": "2025-06-07 08:00"

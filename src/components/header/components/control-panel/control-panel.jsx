@@ -1,26 +1,36 @@
 import styled from 'styled-components';
 import { ROLE } from '../../../../constant';
-import { Button } from '../../../button/button';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserRole, selectUserName, selectUserSession } from '../../../../selectors';
+import {
+	selectUserRole,
+	selectUserName,
+	selectUserSession,
+	selectUserJobTitle,
+} from '../../../../selectors';
 import { Icon } from '../../../icon/icon';
 import { logout } from '../../../../action';
 
 const UserName = styled.div`
 	color: white;
 	text-transform: uppercase;
-	padding: 10px 15px 0 0 ;
+	margin: 0 0 0 55px;
 	font-size: 20px;
+`;
+
+const JobTitle = styled.div`
+	color: white;
+	font-size: 20px;
+	margin: -5px 15px 0 0;
 `;
 
 const ControlPanelContainer = ({ className }) => {
 	const roleId = useSelector(selectUserRole);
 	const user = useSelector(selectUserName);
+	const jobTitle = useSelector(selectUserJobTitle);
 	const dispatch = useDispatch();
 	const session = useSelector(selectUserSession);
 	const navigate = useNavigate();
-
 
 	const onLogout = () => {
 		dispatch(logout(session));
@@ -31,13 +41,12 @@ const ControlPanelContainer = ({ className }) => {
 	return (
 		<div className={className}>
 			{roleId === ROLE.GUEST ? (
-				<Button>
-					<Link to='/login'>Войти</Link>
-				</Button>
+				<div className='welcom'>Добро пожаловать</div>
 			) : (
 				<>
 					<div className='data'>
 						<UserName>{user}</UserName>
+						<JobTitle>{jobTitle}</JobTitle>
 					</div>
 					<Icon
 						id='fa-sign-out'
@@ -53,6 +62,12 @@ const ControlPanelContainer = ({ className }) => {
 
 export const ControlPanel = styled(ControlPanelContainer)`
 	display: flex;
+
+	.welcom {
+		color: white;
+		font-size: 22px;
+		margin: 7px 60px 0 0;
+	}
 
 	button {
 		margin: 10px 50px 0 0;

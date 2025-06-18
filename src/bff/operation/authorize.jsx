@@ -12,7 +12,8 @@ export const authorize = async (loginUser, passwordUser) => {
 		}
 	}
 
-	const {id, login, password, roleId} = user
+	const {id, login, password, job, roleId} = user
+
 
 	if(password !== passwordUser){
 		return {
@@ -27,7 +28,8 @@ export const authorize = async (loginUser, passwordUser) => {
 			session: sessions.create(user),
 			id,
 			login,
-			roleId
+			job,
+			roleId,
 		}
 	}
 }

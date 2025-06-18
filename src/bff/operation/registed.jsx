@@ -19,7 +19,8 @@ export const register = async(loginReg, passReg) => {
 				session: sessions.create(user),
 				id: user.id,
 				login: user.login,
-				roleId: user.role_id
+				roleId: user.role_id,
+				job: user.job
 			}
 		}
 }

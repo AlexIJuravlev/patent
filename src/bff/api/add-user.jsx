@@ -1,6 +1,7 @@
+import { ROLE_TITLE } from "../../constant";
 import { nowDate } from "../utils";
 
-export const addUser = async (login, password) => 
+export const addUser = async (login, password) =>
 	fetch(`http://localhost:3005/users`, {
 		method: 'POST',
 		headers: {
@@ -10,8 +11,8 @@ export const addUser = async (login, password) =>
 			login,
 			password,
 			registed_at: nowDate(),
-			role_id: 2
+			role_id: 2,
+			job: ROLE_TITLE.READ
 		}),
-	})
-		.then((loadedUser) => loadedUser.json())
+	}).then((loadedUser) => loadedUser.json());
 
