@@ -11,30 +11,30 @@ const TodoListContainer = ({ className }) => {
 
 	useEffect(() => {
 		requestServer('fetchTodos', params.id).then((loadedTodo) => {
-			setTodoListUser(loadedTodo.res.todos);
-			console.log('then',loadedTodo.res.todos);
+			setTodoListUser(loadedTodo.res);
 		});
 	}, [requestServer, params.id]);
-
-	console.log('todo',todoListUser);
 
 
 	return (
 		<div className={className}>
-			<TableList />
-			{todoListUser.map(({ id, deadline, content, published_at, title, done }) => (
-				<TaskUser
-					key={id}
-					id={id}
-					deadline={deadline}
-					content={content}
-					published_at={published_at}
-					title={title}
-					done={done}
-				/>
-			))}
+			<TableList/>
+				{todoListUser.map(
+					({ id, deadline, content, published_at, title, done }) => (
+						<TaskUser
+							key={id}
+							id={id}
+							deadline={deadline}
+							content={content}
+							published_at={published_at}
+							title={title}
+							done={done}
+						/>
+					),
+				)}
 		</div>
 	);
 };
 
-export const TodoList = styled(TodoListContainer)``;
+export const TodoList = styled(TodoListContainer)`
+`;

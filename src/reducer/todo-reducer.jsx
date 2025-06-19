@@ -8,7 +8,6 @@ const initialTodoState = {
 	deadline: '',
 	user_id: '',
 	done: false,
-	comments: [],
 };
 
 export const todoReducer = (state = initialTodoState, action) => {
