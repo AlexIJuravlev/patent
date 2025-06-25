@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from "../action";
+import { ACTION_TYPE } from '../action';
 
 const initialTodoState = {
 	id: '',
@@ -7,7 +7,8 @@ const initialTodoState = {
 	published_at: '',
 	deadline: '',
 	user_id: '',
-	done: false,
+	done: '',
+	comment: [],
 };
 
 export const todoReducer = (state = initialTodoState, action) => {
@@ -15,8 +16,10 @@ export const todoReducer = (state = initialTodoState, action) => {
 		case ACTION_TYPE.SET_TODOS:
 			return {
 				...state,
-				...action.payload
-			}
+				...action.payload,
+			};
+		case ACTION_TYPE.DELETE_TODOS:
+			return initialTodoState;
 		default:
 			return state;
 	}

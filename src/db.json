@@ -63,7 +63,7 @@
     {
       "id": "001",
       "title": "Обновить данные",
-      "content": "Обновda=клиента",
+      "content": "Обнывфыфввыфыф ыфввфывыфывфыфчся сячсячс",
       "published_at": "2025-06-05",
       "deadline": "2025-07-01",
       "user_id": "dsaf",
@@ -80,6 +80,15 @@
     },
     {
       "id": "003",
+      "title": "Исправить все ошибки",
+      "content": "Возникают ошибки при работе в программе",
+      "published_at": "2025-06-06 10:00",
+      "deadline": "2025-06-07 09:00",
+      "user_id": "dssf",
+      "done": false
+    },
+    {
+      "id": "004",
       "title": "Исправить все ошибки",
       "content": "Возникают ошибки при работе в программе",
       "published_at": "2025-06-06 10:00",
@@ -105,10 +114,30 @@
   "comments": [
     {
       "id": "324s",
-      "author_id": "dssf",
+      "author_login": "reno",
       "todos_id": "002",
       "content": "Исправленно",
-      "img_url": "https://s00.yaplakal.com/pics/pics_original/4/9/0/19660094.jpg",
+      "publishedAt": "2025-06-07 08:00"
+    },
+    {
+      "id": "32ds",
+      "author_login": "niko",
+      "todos_id": "002",
+      "content": "Исправленно",
+      "publishedAt": "2025-06-07 08:00"
+    },
+    {
+      "id": "3d4s",
+      "author_login": "admin",
+      "todos_id": "003",
+      "content": "Не принято",
+      "publishedAt": "2025-06-07 08:00"
+    },
+    {
+      "id": "3d4s",
+      "author_login": "admin",
+      "todos_id": "004",
+      "content": "Не принято",
       "publishedAt": "2025-06-07 08:00"
     }
   ]

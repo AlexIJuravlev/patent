@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router';
 import styled from 'styled-components';
 import { Header } from './components';
-import { Authoriation, Main, Register, TodoList } from './page';
+import { Authoriation, Main, Register, Task, TodoList } from './page';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setUser } from './action';
@@ -9,6 +9,7 @@ import { setUser } from './action';
 const App = styled.div`
 	display: flex;
 	background-color: white;
+	
 `;
 const Page = styled.div`
 	padding: 50px 0 20px;
@@ -16,7 +17,6 @@ const Page = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	width: 1200px;
-	min-height: 100%;
 	margin: 0 auto;
 	background-color: white;
 `;
@@ -49,12 +49,12 @@ export const Todo = () => {
 					<Route path='/login' element={<Authoriation />} />
 					<Route path='/register' element={<Register />} />
 					<Route path='/todos/:id' element={<TodoList/>} />
-					<Route path='/todo/:id/edit' element={<div>Новая задачи</div>} />
+					<Route path='/todos/:id/:id' element={<Task/>} />
+					<Route path='/todos/:id/:id/edit' element={<Task/>} />
 					<Route path='/admin' element={<div>Админ панель</div>} />
 					<Route path='*' element={<div>Страница ошибки</div>} />
 				</Routes>
 			</Page>
-			{/* <Footer /> */}
 		</App>
 	);
 };

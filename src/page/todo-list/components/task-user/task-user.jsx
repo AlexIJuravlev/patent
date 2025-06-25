@@ -1,24 +1,27 @@
 import styled from 'styled-components';
 import { Icon } from '../../../../components';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useServer } from '../../../../hooks';
-import { updateCheked } from '../../../../bff/operation';
+import { useDispatch} from 'react-redux';
+import { deleteTodos } from '../../../../action';
 
 const TaskUserContainer = ({ className, id, deadline, content, title, done }) => {
 	const [isCheked, setIsCheked] = useState(done);
 	const [comment, setComment] = useState(content);
-	const [imgTask, setImgTask] = useState('');
+	// const [imgTask, setImgTask] = useState('');
 	const requestServer = useServer();
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
+
 
 	useEffect(() => {
 		requestServer('updateCheked', id, isCheked);
-
-	}, [requestServer, id, isCheked]);
+	}, [requestServer, id, isCheked, dispatch, navigate]);
 
 	const handleChech = () => {
-		setIsCheked(!isCheked)
-	}
+		setIsCheked(!isCheked);
+	};
 
 	const handleComment = ({ target }) => {
 		setComment(target.value);
@@ -26,18 +29,30 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 
 	const saveComment = () => {
 		requestServer('updateContent', id, comment);
-	}
+	};
+
+	const pageOfTask = () => {
+		dispatch(deleteTodos());
+		navigate(`./${id}`)
+	};
 
 	const savePhoto = () => {};
 
 	return (
 		<div className={className}>
 			<div className='box-task'>
-				<Link to={`./${id}`}>
-					<div className='box-title'>{title}</div>
-				</Link>
+				<button>
+					<div className='box-title' onClick={pageOfTask}>
+						{title}
+					</div>
+				</button>
 				<div className='box-deadline'>{deadline}</div>
-				<textarea value={comment} className='box-content' onChange={handleComment} rows='3'/>
+				<textarea
+					value={comment}
+					className='box-content'
+					onChange={handleComment}
+					rows='3'
+				/>
 				<Icon
 					id='fa-download'
 					margin='0 85px 0 50px'

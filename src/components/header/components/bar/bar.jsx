@@ -25,7 +25,7 @@ const BarContainer = ({ className }) => {
 					<Link to='/'>Главная</Link>
 					<Link to='/todo/:id/edit'>Создать задачу</Link>
 					<Link>Найти задачу</Link>
-					<Link>Добавить сотрудника</Link>
+					<Link>Все сотрудники</Link>
 				</>
 			)}
 		</div>
