@@ -12,8 +12,6 @@ const ControlUnitContainet = ({ className }) => {
 	const navigete = useNavigate()
 
 
-	console.log(params.id);
-
 	const deleteTask = () => {
 		dispatch(deleteTaskAsync(requestServer, params.id))
 		navigete(-1)

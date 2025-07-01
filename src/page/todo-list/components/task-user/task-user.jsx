@@ -14,10 +14,9 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
-
 	useEffect(() => {
 		requestServer('updateCheked', id, isCheked);
-	}, [requestServer, id, isCheked, dispatch, navigate]);
+	}, [requestServer, id, isCheked]);
 
 	const handleChech = () => {
 		setIsCheked(!isCheked);

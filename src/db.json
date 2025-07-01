@@ -85,7 +85,7 @@
       "published_at": "2025-06-06 10:00",
       "deadline": "2025-06-07 09:00",
       "user_id": "dssf",
-      "done": false
+      "done": true
     },
     {
       "id": "004",
@@ -94,13 +94,13 @@
       "published_at": "2025-06-06 10:00",
       "deadline": "2025-06-07 09:00",
       "user_id": "dssf",
-      "done": false
+      "done": true
     }
   ],
   "session": [
     {
-      "id": "fa0c",
-      "hash": "0.87800913034260363865257659199414774775505065917969",
+      "id": "7ca6",
+      "hash": "0.02171652842226268198544403276173397898674011230469",
       "user": {
         "login": "admin",
         "password": "qwerty123",
@@ -120,23 +120,9 @@
       "publishedAt": "2025-06-07 08:00"
     },
     {
-      "id": "32ds",
-      "author_login": "niko",
-      "todos_id": "002",
-      "content": "Исправленно",
-      "publishedAt": "2025-06-07 08:00"
-    },
-    {
       "id": "3d4s",
       "author_login": "admin",
       "todos_id": "003",
-      "content": "Не принято",
-      "publishedAt": "2025-06-07 08:00"
-    },
-    {
-      "id": "3d4s",
-      "author_login": "admin",
-      "todos_id": "004",
       "content": "Не принято",
       "publishedAt": "2025-06-07 08:00"
     }

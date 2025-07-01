@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 import { ControlUnit } from './components';
+import { useSelector } from 'react-redux';
+import { todoCheckSelect } from '../../../../selectors';
+
 
 const TaskInfoContainer = ({
 	className,
-	todo: { title, content, deadline, done, published_at },
+	todo: { title, content, deadline, published_at },
 }) => {
+
+	const check = useSelector(todoCheckSelect)
+
+
 	return (
 		<div className={className}>
-			<ControlUnit/>
+			<ControlUnit />
 			<div className='task-box'>
 				<h2>{title}</h2>
 				<div className='task-time'>
@@ -27,7 +34,12 @@ const TaskInfoContainer = ({
 					</div>
 					<div className='done'>
 						<div>Статус выполнения</div>
-						<input type='checkbox' className='done_check' value={done} />
+						<input
+							type='checkbox'
+							className='done_check'
+							checked={check}
+							readOnly
+						/>
 					</div>
 				</div>
 			</div>

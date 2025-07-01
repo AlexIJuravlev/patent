@@ -16,8 +16,6 @@ export const updateContent = async (userSession, id, comment) => {
 		};
 	}
 
-	console.log(comment);
-
 	patchContent(id, comment);
 
 	return {
