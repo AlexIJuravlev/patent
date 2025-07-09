@@ -10,7 +10,7 @@ export const LogoName = styled(LogoNameContainer)`
 	border: 1px solid #563de4;
 	border-radius: 50%;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 24px;
 	font-weight: bold;
 	background-color: #563de4;
 	color: white;

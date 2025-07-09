@@ -2,19 +2,24 @@ import styled from 'styled-components';
 import { ControlUnit } from './components';
 import { useSelector } from 'react-redux';
 import { todoCheckSelect } from '../../../../selectors';
+import { useNavigate } from 'react-router';
 
 
 const TaskInfoContainer = ({
 	className,
 	todo: { title, content, deadline, published_at },
 }) => {
+	const check = useSelector(todoCheckSelect);
+	const navigate = useNavigate();
 
-	const check = useSelector(todoCheckSelect)
 
+	const editPage = () => {
+		navigate('./edit');
+	};
 
 	return (
 		<div className={className}>
-			<ControlUnit />
+			<ControlUnit onClick={editPage} icon={'fa-pencil-square-o'} />
 			<div className='task-box'>
 				<h2>{title}</h2>
 				<div className='task-time'>
