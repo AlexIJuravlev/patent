@@ -86,6 +86,42 @@
       "deadline": "2025-06-07 09:00",
       "user_id": "dssf",
       "done": true
+    },
+    {
+      "id": "f865",
+      "title": "Новая задача 2",
+      "content": "проверка",
+      "published_at": "09.07.2025, 14:54",
+      "deadline": "2025-07-09 16:54",
+      "user_id": "dssf",
+      "done": false
+    },
+    {
+      "id": "ebd1",
+      "title": "dsasdaasdasd",
+      "content": "sdasaasdasdasd",
+      "published_at": "09.07.2025, 14:58",
+      "deadline": "2025-07-10 17:58",
+      "user_id": "dssf",
+      "done": false
+    },
+    {
+      "id": "6304",
+      "title": "Новая задача",
+      "content": "проверка",
+      "published_at": "09.07.2025, 15:33",
+      "deadline": "2025-07-12 17:33",
+      "user_id": "dssf",
+      "done": false
+    },
+    {
+      "id": "7704",
+      "title": "Проверка ",
+      "content": "новая",
+      "published_at": "09.07.2025, 15:34",
+      "deadline": "2025-07-10 18:34",
+      "user_id": "dssf",
+      "done": true
     }
   ],
   "session": [
@@ -114,20 +150,5 @@
       }
     }
   ],
-  "comments": [
-    {
-      "id": "3d4s",
-      "author_login": "admin",
-      "todos_id": "003",
-      "content": "Не принято",
-      "publishedAt": "2025-06-07 08:00"
-    },
-    {
-      "id": "fac3",
-      "author_login": "admin",
-      "todos_id": "003",
-      "content": "Исправить",
-      "publishedAt": "01.07.2025, 16:16"
-    }
-  ]
+  "comments": []
 }

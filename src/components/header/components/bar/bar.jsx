@@ -23,7 +23,7 @@ const BarContainer = ({ className }) => {
 						onClick={() => navigate(-1)}
 					/>
 					<Link to='/'>Главная</Link>
-					<Link to='/todo/:id/edit'>Создать задачу</Link>
+					<Link to='/newTodo'>Создать задачу</Link>
 					<Link>Найти задачу</Link>
 					<Link>Все сотрудники</Link>
 				</>

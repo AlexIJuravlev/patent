@@ -1,12 +1,13 @@
 
 import { ROLE } from "../../constant";
-import { getTodo, patchTodo } from "../api";
+import { addTodo } from "../api";
 import { sessions } from "../session";
 
-export const updateTodo = async (userSession, todoId, title, content, deadline) => {
+export const addTodos = async (userSession, content, title, published_at, deadline, user_id) => {
 	const accessRole = [ROLE.ADMIN, ROLE.MODERATOR];
 
 	const access = await sessions.checkAccess(userSession, accessRole);
+
 
 	if (!access) {
 		return {
@@ -15,9 +16,8 @@ export const updateTodo = async (userSession, todoId, title, content, deadline) 
 		};
 	}
 
-	await patchTodo(todoId, title, content, deadline);
+	const todo = await addTodo(content, title, published_at, deadline, user_id);
 
-	const todo = await getTodo(todoId);
 
 	return {
 		error: null,
