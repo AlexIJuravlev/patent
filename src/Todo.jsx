@@ -13,9 +13,9 @@ const App = styled.div`
 `;
 const Page = styled.div`
 	padding: 50px 0 20px;
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-between; */
 	width: 1200px;
 	margin: 0 auto;
 	background-color: white;

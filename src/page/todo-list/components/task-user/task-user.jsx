@@ -35,12 +35,11 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 		navigate(`./${id}`)
 	};
 
-	const savePhoto = () => {};
 
 	return (
 		<div className={className}>
 			<div className='box-task'>
-				<button>
+				<button className='box-btn'>
 					<div className='box-title' onClick={pageOfTask}>
 						{title}
 					</div>
@@ -52,12 +51,6 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 					onChange={handleComment}
 					rows='3'
 				/>
-				<Icon
-					id='fa-download'
-					margin='0 85px 0 50px'
-					color='black'
-					onClick={savePhoto}
-				/>
 				<input
 					className='box-check'
 					type='checkbox'
@@ -67,7 +60,7 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 			</div>
 			<Icon
 				id='fa-floppy-o'
-				margin='25px 0 0 50px'
+				margin='25px 0 0 0'
 				color='black'
 				onClick={saveComment}
 			/>
@@ -76,10 +69,9 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 };
 export const TaskUser = styled(TaskUserContainer)`
 	display: flex;
-	margin: 60px auto;
+	margin: 30px auto;
 	max-width: 85%;
-	border: 1px solid black;
-	border-radius: 25px;
+
 	position: relative;
 
 	a {
@@ -91,29 +83,37 @@ export const TaskUser = styled(TaskUserContainer)`
 		padding: 5px 0 5px 5px;
 	}
 
+	.box-btn {
+		color: white;
+		font-size: 16px;
+		background-color: #563de4;
+		border-radius: 25px;
+		width: 150px;
+		height: 50px;
+	}
+
 	.box-task {
+		border: 1px solid black;
+		border-radius: 25px;
 		display: flex;
 		align-items: center;
 		text-align: center;
-		margin: 10px 30px;
-	}
-
-	.box-title {
-		width: 150px;
+		margin: 0 30px;
+		padding: 5px 40px;
 	}
 
 	.box-deadline {
 		width: 100px;
-		margin: 0 0 0 30px;
+		margin: 0 20px 0 30px;
 	}
 
 	.box-check {
-		margin: 0;
+		margin: 0 0 0 100px;
 	}
 
 	.box-content {
 		width: 450px;
-		margin: 0 0 0 20px;
+		margin: 0 auto;
 		font-size: 18px;
 		text-align: center;
 		border: none;

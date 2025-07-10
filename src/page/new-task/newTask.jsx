@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { nowDate } from '../../bff/utils';
