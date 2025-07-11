@@ -36,6 +36,8 @@ const BlogAuth = styled.div`
 	border-radius: 30px;
 	padding: 30px;
 	background-color: #563de4;
+	display: flex;
+	margin: 0 auto;
 `;
 
 const StyledLink = styled(Link)`

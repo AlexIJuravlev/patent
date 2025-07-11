@@ -90,6 +90,7 @@ export const TaskUser = styled(TaskUserContainer)`
 		border-radius: 25px;
 		width: 150px;
 		height: 50px;
+		cursor: pointer;
 	}
 
 	.box-task {

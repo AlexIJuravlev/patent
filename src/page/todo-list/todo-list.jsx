@@ -30,7 +30,7 @@ const TodoListContainer = ({ className }) => {
 				.finally(() => {
 					setIsLoading(false);
 				});
-		},500)
+		},300)
 
 	}, [requestServer, params.id, todoListUser]);
 

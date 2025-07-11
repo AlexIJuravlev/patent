@@ -24,8 +24,7 @@ const BarContainer = ({ className }) => {
 					/>
 					<Link to='/'>Главная</Link>
 					<Link to='/newTodo'>Создать задачу</Link>
-					<Link>Найти задачу</Link>
-					<Link>Все сотрудники</Link>
+					<Link to='/users'>Все сотрудники</Link>
 				</>
 			)}
 		</div>
@@ -36,7 +35,7 @@ export const Bar = styled(BarContainer)`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 30%;
+	width: 25%;
 	margin: 0 0 0 60px;
 
 	a {

@@ -6,12 +6,12 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { deleteTodos, loadTodoData } from '../../action';
 import { useServer } from '../../hooks';
 import { TaskInfo, Comments, TaskForm } from './components';
+import { Loader } from '../../components';
 
 const TaskContainer = ({ className }) => {
 	const params = useParams();
 	const todo = useSelector(todoTodoSelect);
 	const [isLoading, setIsLoading] = useState(true);
-	const isCreating = useMatch('./todos');
 	const isEditing = useMatch('/todos/:id/:id/edit');
 
 	const dispatch = useDispatch();
@@ -19,24 +19,21 @@ const TaskContainer = ({ className }) => {
 
 	useLayoutEffect(() => {
 		dispatch(deleteTodos);
-	}, [dispatch, isCreating]);
+	}, [dispatch, ]);
 
 	useEffect(() => {
-		if (isCreating) {
-			setIsLoading(false);
-			return;
-		}
-		dispatch(loadTodoData(requestServer, params.id)).then(() => {
-			setIsLoading(false);
-		});
-	}, [dispatch, requestServer, params.id, isCreating]);
+		setIsLoading(true)
+		setTimeout(()=>{
+			dispatch(loadTodoData(requestServer, params.id)).then(() => {
+				setIsLoading(false);
+			});
+		}, 300)
 
-	if(isLoading){
-		return null
-	}
+	}, [dispatch, requestServer, params.id]);
+
 
 	const SpecialFormTask =
-		isCreating || isEditing ? (
+	 isEditing ? (
 			<TaskForm todo={todo} />
 		) : (
 			<div className={className}>
@@ -45,7 +42,7 @@ const TaskContainer = ({ className }) => {
 			</div>
 		);
 
-	return SpecialFormTask;
+	return (<>{isLoading ? <Loader/> : SpecialFormTask}</>) ;
 };
 
 export const Task = styled(TaskContainer)`

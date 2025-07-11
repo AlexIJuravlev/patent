@@ -12,7 +12,7 @@ const IconContainer = ({ className, id, onClick, ...props }) => {
 export const Icon = styled(IconContainer)`
 	font-size: ${({ size = '24px' }) => size};
 	margin: ${({ margin = '0' }) => margin};
-	color: ${({ color = '#ccc' }) => color};
+	color: ${({ color = '#ccc' }) => (color)};
 
 	cursor: ${({ onClick }) => (onClick ? 'pointer' : 'default')};
 `;

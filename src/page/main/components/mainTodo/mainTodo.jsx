@@ -23,7 +23,7 @@ const MainTodoContainer = ({ className }) => {
 				.finally(() => {
 					setIsLoading(false);
 				});
-		}, 500)
+		}, 300)
 	}, [requestServer]);
 
 	const filterName = users.filter((user) => user.role_id !== ROLE.ADMIN);

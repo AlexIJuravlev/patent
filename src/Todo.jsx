@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router';
 import styled from 'styled-components';
 import { Header } from './components';
-import { Authoriation, Main, NewTask, Register, Task, TodoList } from './page';
+import { Authoriation, Main, NewTask, Register, Task, TodoList, Users } from './page';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setUser } from './action';
@@ -52,7 +52,7 @@ export const Todo = () => {
 					<Route path='/todos/:id/:id' element={<Task />} />
 					<Route path='/todos/:id/:id/edit' element={<Task />} />
 					<Route path='/newTodo' element={<NewTask />} />
-					<Route path='/admin' element={<div>Админ панель</div>} />
+					<Route path='/users' element={<Users/>} />
 					<Route path='*' element={<div>Страница ошибки</div>} />
 				</Routes>
 			</Page>
