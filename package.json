@@ -11,6 +11,7 @@
     "format": "prettier --write ./src"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "json-server": "^0.17.4",
     "prettier": "^3.4.1",
     "prop-types": "^15.8.1",

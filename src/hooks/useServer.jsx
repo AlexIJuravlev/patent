@@ -1,0 +1,21 @@
+import { useSelector } from 'react-redux';
+import { selectUserSession } from '../selectors';
+import { useCallback } from 'react';
+import { server } from '../bff';
+
+export const useServer = () => {
+	const session = useSelector(selectUserSession);
+
+	return useCallback((operation, ...params) => {
+		const request = [
+			'register',
+			'authorize',
+			'fetchTodos',
+			'fetchTodo',
+		].includes(operation)
+			? params
+			: [session, ...params];
+
+			return server[operation](...request)
+	},[session]);
+};
