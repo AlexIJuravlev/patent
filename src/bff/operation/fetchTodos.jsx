@@ -1,8 +1,19 @@
-import { getTodos } from '../api';
+import { getAloneUser, getTodos } from '../api';
 
 export const fetchTodos = async (userId) => {
-	const todos = await getTodos(userId);
 
+	const user = await getAloneUser(userId)
+
+	if(!user){
+		return {
+			error: 'Такого пользователя не существует',
+			res: null,
+		};
+	}
+
+
+
+	const todos = await getTodos(userId)
 	if (!todos) {
 		return {
 			error: 'Ошибка получения данных',
@@ -13,6 +24,6 @@ export const fetchTodos = async (userId) => {
 
 	return {
 		error: null,
-		res: todos
-	}
-}
+		res: todos,
+	};
+};

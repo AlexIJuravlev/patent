@@ -1,38 +1,43 @@
 import styled from 'styled-components';
 import { TableList, TaskUser } from './components';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { useServer } from '../../hooks';
 import { Loader } from '../../components';
+import { useSelector } from 'react-redux';
+import { selectUserId } from '../../selectors';
 
 const TodoListContainer = ({ className }) => {
 	const params = useParams();
 	const requestServer = useServer();
 	const [todoListUser, setTodoListUser] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const navigate = useNavigate()
+	const userId = useSelector(selectUserId)
 
 	useEffect(() => {
 		setIsLoading(true);
 
-		setTimeout(()=>{
-
-			requestServer('fetchTodos', params.id)
+		setTimeout(() => {
+			requestServer('fetchTodos', params.id || userId)
 				.then((loadedTodo) => {
+					if (loadedTodo.error) {
+						console.error(loadedTodo.error);
+					}
 					if (
 						JSON.stringify(loadedTodo?.res) !== JSON.stringify(todoListUser)
 					) {
 						setTodoListUser(loadedTodo.res);
 					}
 				})
-				.catch((error) => {
-					console.error(error);
+				.catch(() => {
+					navigate('/*');
 				})
 				.finally(() => {
 					setIsLoading(false);
 				});
-		},300)
-
-	}, [requestServer, params.id, todoListUser]);
+		}, 300);
+	}, [requestServer, params.id, todoListUser, navigate, userId]);
 
 
 	return (
@@ -43,7 +48,15 @@ const TodoListContainer = ({ className }) => {
 				<>
 					<TableList />
 					{todoListUser.map(
-						({ id, deadline, content, published_at, title, done }) => (
+						({
+							id,
+							deadline,
+							content,
+							published_at,
+							title,
+							done,
+							user_id,
+						}) => (
 							<TaskUser
 								key={id}
 								id={id}
@@ -52,6 +65,7 @@ const TodoListContainer = ({ className }) => {
 								published_at={published_at}
 								title={title}
 								done={done}
+								userId={user_id}
 							/>
 						),
 					)}
@@ -61,6 +75,4 @@ const TodoListContainer = ({ className }) => {
 	);
 };
 
-export const TodoList = styled(TodoListContainer)`
-
-`;
+export const TodoList = styled(TodoListContainer)``;

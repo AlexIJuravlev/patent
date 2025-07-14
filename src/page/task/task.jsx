@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useMatch, useParams } from 'react-router';
+import { useMatch, useNavigate, useParams } from 'react-router';
 import styled from 'styled-components';
 import { todoTodoSelect } from '../../selectors';
 import { useEffect, useLayoutEffect, useState } from 'react';
@@ -13,36 +13,39 @@ const TaskContainer = ({ className }) => {
 	const todo = useSelector(todoTodoSelect);
 	const [isLoading, setIsLoading] = useState(true);
 	const isEditing = useMatch('/todos/:id/:id/edit');
+	const navigate = useNavigate()
 
 	const dispatch = useDispatch();
 	const requestServer = useServer();
 
 	useLayoutEffect(() => {
 		dispatch(deleteTodos);
-	}, [dispatch, ]);
+	}, [dispatch]);
 
 	useEffect(() => {
-		setIsLoading(true)
-		setTimeout(()=>{
-			dispatch(loadTodoData(requestServer, params.id)).then(() => {
-				setIsLoading(false);
-			});
-		}, 300)
+		setIsLoading(true);
+		setTimeout(() => {
+			dispatch(loadTodoData(requestServer, params.id))
+				.then(() => {
+					setIsLoading(false);
+				})
+				.catch(() => {
+					setIsLoading(false);
+					navigate('/*');
+				});
+		}, 300);
+	}, [dispatch, requestServer, params.id, navigate]);
 
-	}, [dispatch, requestServer, params.id]);
+	const SpecialFormTask = isEditing ? (
+		<TaskForm todo={todo} />
+	) : (
+		<div className={className}>
+			<TaskInfo todo={todo} />
+			<Comments comment={todo.comment} id={todo.id} />
+		</div>
+	);
 
-
-	const SpecialFormTask =
-	 isEditing ? (
-			<TaskForm todo={todo} />
-		) : (
-			<div className={className}>
-				<TaskInfo todo={todo} />
-				<Comments comment={todo.comment} id={todo.id} />
-			</div>
-		);
-
-	return (<>{isLoading ? <Loader/> : SpecialFormTask}</>) ;
+	return <>{isLoading ? <Loader /> : SpecialFormTask}</>;
 };
 
 export const Task = styled(TaskContainer)`

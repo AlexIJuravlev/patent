@@ -22,9 +22,15 @@ const BarContainer = ({ className }) => {
 						size='20px'
 						onClick={() => navigate(-1)}
 					/>
-					<Link to='/'>Главная</Link>
-					<Link to='/newTodo'>Создать задачу</Link>
-					<Link to='/users'>Все сотрудники</Link>
+					{role === ROLE.ADMIN ? (
+						<>
+							<Link to='/'>Главная</Link>
+							<Link to='/newTodo'>Создать задачу</Link>
+							<Link to='/users'>Все сотрудники</Link>
+						</>
+					) : (
+						<Link to='/'>Главная</Link>
+					)}
 				</>
 			)}
 		</div>
@@ -34,7 +40,6 @@ const BarContainer = ({ className }) => {
 export const Bar = styled(BarContainer)`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	width: 25%;
 	margin: 0 0 0 60px;
 
@@ -44,7 +49,7 @@ export const Bar = styled(BarContainer)`
 		color: white;
 		display: flex;
 		justify-content: space-between;
-		padding: 0 5px;
+		padding: 0 20px;
 	}
 
 	a:after,
@@ -66,7 +71,8 @@ export const Bar = styled(BarContainer)`
 		right: 50%;
 	}
 
-	a:hover:before,a:hover:after{
+	a:hover:before,
+	a:hover:after {
 		width: 50%;
-	};
+	}
 `;

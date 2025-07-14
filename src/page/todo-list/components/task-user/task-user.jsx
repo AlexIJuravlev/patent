@@ -1,18 +1,23 @@
 import styled from 'styled-components';
-import { Icon } from '../../../../components';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useServer } from '../../../../hooks';
 import { useDispatch} from 'react-redux';
 import { deleteTodos } from '../../../../action';
 
-const TaskUserContainer = ({ className, id, deadline, content, title, done }) => {
+const TaskUserContainer = ({
+	className,
+	id,
+	deadline,
+	content,
+	title,
+	done,
+	userId,
+}) => {
 	const [isCheked, setIsCheked] = useState(done);
-	const [comment, setComment] = useState(content);
-	// const [imgTask, setImgTask] = useState('');
 	const requestServer = useServer();
-	const navigate = useNavigate()
-	const dispatch = useDispatch()
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		requestServer('updateCheked', id, isCheked);
@@ -22,19 +27,10 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 		setIsCheked(!isCheked);
 	};
 
-	const handleComment = ({ target }) => {
-		setComment(target.value);
-	};
-
-	const saveComment = () => {
-		requestServer('updateContent', id, comment);
-	};
-
 	const pageOfTask = () => {
 		dispatch(deleteTodos());
-		navigate(`./${id}`)
+		navigate(`/todos/${userId}/${id}`);
 	};
-
 
 	return (
 		<div className={className}>
@@ -45,12 +41,7 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 					</div>
 				</button>
 				<div className='box-deadline'>{deadline}</div>
-				<textarea
-					value={comment}
-					className='box-content'
-					onChange={handleComment}
-					rows='3'
-				/>
+				<div className='box-content'>{content}</div>
 				<input
 					className='box-check'
 					type='checkbox'
@@ -58,12 +49,6 @@ const TaskUserContainer = ({ className, id, deadline, content, title, done }) =>
 					onChange={handleChech}
 				/>
 			</div>
-			<Icon
-				id='fa-floppy-o'
-				margin='25px 0 0 0'
-				color='black'
-				onClick={saveComment}
-			/>
 		</div>
 	);
 };

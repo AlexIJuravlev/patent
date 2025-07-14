@@ -12,8 +12,8 @@
       "login": "ivan",
       "password": "qwerty123",
       "registed_at": "2025-06-10 11:00",
-      "role_id": 1,
-      "job": "Заместитель",
+      "role_id": 2,
+      "job": "Исполнитель",
       "id": "dsaf"
     },
     {
@@ -37,6 +37,14 @@
       "login": "renoo",
       "password": "qwerqwer",
       "registed_at": "14.06.2025, 09:18",
+      "role_id": 2,
+      "job": "Исполнитель"
+    },
+    {
+      "id": "4643",
+      "login": "Read",
+      "password": "qwerqwer",
+      "registed_at": "14.07.2025, 13:11",
       "role_id": 2,
       "job": "Исполнитель"
     }
@@ -85,23 +93,14 @@
       "published_at": "2025-06-06 10:00",
       "deadline": "2025-06-07 09:00",
       "user_id": "dssf",
-      "done": true
+      "done": false
     },
     {
       "id": "f865",
       "title": "Новая задача 2",
-      "content": "проверка",
+      "content": "Исправил",
       "published_at": "09.07.2025, 14:54",
       "deadline": "2025-07-09 16:54",
-      "user_id": "dssf",
-      "done": false
-    },
-    {
-      "id": "ebd1",
-      "title": "dsasdaasdasd",
-      "content": "sdasaasdasdasd",
-      "published_at": "09.07.2025, 14:58",
-      "deadline": "2025-07-10 17:58",
       "user_id": "dssf",
       "done": false
     },
@@ -122,6 +121,24 @@
       "deadline": "2025-07-10 18:34",
       "user_id": "dssf",
       "done": true
+    },
+    {
+      "id": "d333",
+      "title": "Курсы",
+      "content": "Приступить к курсам",
+      "published_at": "11.07.2025, 18:56",
+      "deadline": "2025-07-14 20:56",
+      "user_id": "04f3",
+      "done": false
+    },
+    {
+      "id": "7e8a",
+      "title": "Попей чай",
+      "content": "Заметил, что ты совсем обезвожен. Срочно выпей чай",
+      "published_at": "14.07.2025, 13:29",
+      "deadline": "2025-07-14 14:28",
+      "user_id": "4643",
+      "done": false
     }
   ],
   "session": [
@@ -138,8 +155,8 @@
       }
     },
     {
-      "id": "abec",
-      "hash": "0.70493097798414083854368072934448719024658203125000",
+      "id": "681d",
+      "hash": "0.03204474678797319953105215972755104303359985351563",
       "user": {
         "login": "admin",
         "password": "qwerty123",
@@ -152,18 +169,25 @@
   ],
   "comments": [
     {
-      "id": "c4ec",
-      "author_login": "reno",
-      "todos_id": "ebd1",
-      "content": "ghjdthrf\n",
-      "publishedAt": "09.07.2025, 16:35"
-    },
-    {
       "id": "5583",
       "author_login": "reno",
       "todos_id": "001",
       "content": "fdsdsdfs",
       "publishedAt": "09.07.2025, 16:51"
+    },
+    {
+      "id": "def6",
+      "author_login": "niko",
+      "todos_id": "f865",
+      "content": "исправил",
+      "publishedAt": "14.07.2025, 13:24"
+    },
+    {
+      "id": "284b",
+      "author_login": "admin",
+      "todos_id": "7e8a",
+      "content": "Ты до сих пор его не выпил. СРОЧНО!",
+      "publishedAt": "14.07.2025, 13:29"
     }
   ]
 }

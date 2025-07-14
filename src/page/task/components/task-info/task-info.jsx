@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { ControlUnit } from './components';
 import { useSelector } from 'react-redux';
-import { todoCheckSelect } from '../../../../selectors';
+import { selectUserRole, todoCheckSelect } from '../../../../selectors';
 import { useNavigate } from 'react-router';
+import { ROLE } from '../../../../constant';
 
 
 const TaskInfoContainer = ({
@@ -11,7 +12,7 @@ const TaskInfoContainer = ({
 }) => {
 	const check = useSelector(todoCheckSelect);
 	const navigate = useNavigate();
-
+	const roleId = useSelector(selectUserRole)
 
 	const editPage = () => {
 		navigate('./edit');
@@ -19,7 +20,8 @@ const TaskInfoContainer = ({
 
 	return (
 		<div className={className}>
-			<ControlUnit onClick={editPage} icon={'fa-pencil-square-o'} />
+			{roleId === ROLE.ADMIN ? <ControlUnit onClick={editPage} icon={'fa-pencil-square-o'} /> : ''}
+
 			<div className='task-box'>
 				<h2>{title}</h2>
 				<div className='task-time'>
